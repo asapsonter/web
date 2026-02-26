@@ -1,0 +1,348 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== CSS VARIABLES (Light Theme Default) ===== */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --header-bg: #fff;
+    --shadow: rgba(0,0,0,0.1);
+    --footer-bg: #333;
+    --footer-text: #fff;
+}
+
+body.dark-mode {
+    --bg-color: #222;
+    --text-color: #f4f4f4;
+    --primary-color: #66b0ff;
+    --primary-hover: #3385ff;
+    --card-bg: #333;
+    --border-color: #444;
+    --header-bg: #2a2a2a;
+    --shadow: rgba(255,255,255,0.1);
+    --footer-bg: #111;
+    --footer-text: #ddd;
+}
+
+/* ===== CONTAINER ===== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* ===== NAVIGATION ===== */
+header {
+    background: var(--header-bg);
+    box-shadow: 0 2px 5px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--text-color);
+}
+
+/* ===== HERO SECTION ===== */
+#hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#hero .btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+#hero .btn:hover {
+    background: var(--primary-hover);
+    color: #fff;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    flex: 0 0 200px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow);
+    border: 3px solid var(--primary-color);
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* ===== SKILLS ===== */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+}
+
+.skills-list li {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* ===== PROJECTS GRID ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.project-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.social-links a {
+    margin-right: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.contact-form button {
+    margin-top: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: var(--primary-hover);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial state for animated elements */
+.fade-in, .slide-up {
+    opacity: 0;
+}
+
+/* Class added by Intersection Observer when element is visible */
+.fade-in.visible {
+    animation: fadeIn 1s ease forwards;
+}
+
+.slide-up.visible {
+    animation: slideUp 0.8s ease forwards;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    #hero h1 {
+        font-size: 2rem;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        flex: 0 0 auto;
+        width: 150px;
+    }
+}

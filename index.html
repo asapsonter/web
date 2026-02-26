@@ -1,71 +1,108 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-  <link rel="stylesheet" href="assets/CSS/main.css">
-  <link rel="icon" href="images/favicon.png" type="image/png">
-  <title>asapsonter</title>
-  <!-- load jquery from node_modules -->
-<!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<!-- Load htmx from a CDN -->
-<script src="https://unpkg.com/htmx.org"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Optional: Add a Google Font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
-
-
 <body>
-
-  <div class="header">
-    <div class="container">
-      <div class="nav_control">
-        <h1 class="header_icon">☕ sipping coffee and innovating the future</h1>
-        <p class="header_intro">Hi, Welcome to my website.</p>
-        <nav class="header_nav">
-          <!-- Use hx-get to load each page content from another URL -->
-          <!-- Use hx-target to specify where to put the response -->
-          <!-- Use hx-swap to specify how to update the target element -->
-          <!-- Use hx-push-url to update the browser URL with each page URL -->
-          <a href="About.html" hx-get="/About.html" hx-target="#main-content" hx-swap="outerHTML"
-            hx-push-url="true">About</a>
-          <a href="https://www.linkedin.com/in/aarga-sonter" target="_blank">linkedin</a>
-          <a href="https://github.com/asapsonter" target="_blank">Github</a>
-          <a href="https://twitter.com/asapsonter" target="_blank">X</a>
-          <a href="https://discord.gg/tvVja6cR" target="_blank">Discord</a>
-          <a href="https://reddit.com/u/Asap_sonter" target="_blank">Reddit</a>
-          <!-- <a href="https://twitter.com/asapsonter" hx-get="https://twitter.com/asapsonter" hx-target="#main-content" hx-swap="outerHTML" hx-push-url="true">X</a>
-          <a href="https://www.linkedin.com/in/aarga-sonter" hx-get="https://www.linkedin.com/in/aarga-sonter" hx-target="#main-content" hx-swap="outerHTML" hx-push-url="true">linkedin</a>
-          <a href="https://github.com/asapsonter" hx-get="https://github.com/asapsonter" hx-target="#main-content" hx-swap="outerHTML" hx-push-url="true">Github</a> -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
         </nav>
-      </div>
-    </div>
-  </div>
-  <!-- Use an id for this main element, so that it can be targeted by HTMX -->
-  <main id="main-content" class="main">
-    <!-- Add a class for each section, so that they can be styled by CSS -->
-    <section class="section" hx-post="https://news.yahoo.com/rss/" hx-trigger="click" hx-target="#news-content"
-      hx-swap="innerHTML">
-      <div class="section1_image">
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer_div">
-      <div class="find_text">Find an issue with this page? <a class="find_issue_link"
-          href="https://github.com/asapsonter/web">Fix it on GitHub</a></div>
-          <div class="email_me">
-            Need help? Email <a href="mailto:sam.sonter@hotmail.com"><strong
-                class="text-white font-bold">My Email</strong></a>
-          </div>
-          <div id="copyRight">
-            Copyright © asapsonter <br>
-          </div>
-          
-    </div>
-  </footer>
-  <script src="./assets/JS/index.js"></script>
-</body>
+    </header>
 
+    <main>
+        <section id="hero" class="fade-in">
+            <h1>Hi, I'm Sam Sonter</h1>
+            <p>Software Engineer specializing in web development and cloud solutions.</p>
+            <a href="#projects" class="btn">See My Work</a>
+        </section>
+
+        <section id="about" class="slide-up">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <!-- Profile picture -->
+                <div class="profile-pic">
+                    <img src="images/my_profile_picture.jpg" alt="Your Name" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <p>Write a compelling introduction about yourself. Mention your passion for coding, your experience, and what you're looking for in your next role. Keep it concise but engaging.</p>
+                    <p>You can also add a second paragraph with more personal details or your philosophy towards software development.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="slide-up">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>C++</li>
+                <li>Git</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="slide-up">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project Name</h3>
+                    <p>Short description of the project, what technologies you used, and what problem it solves.</p>
+                    <a href="#" target="_blank">Live Demo</a> | <a href="#" target="_blank">GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Another Project</h3>
+                    <p>Description of another cool project you built. Keep it concise but informative.</p>
+                    <a href="#" target="_blank">Live Demo</a> | <a href="#" target="_blank">GitHub</a>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+        <section id="contact" class="slide-up">
+            <h2>Contact</h2>
+            <p>Feel free to reach out via email or social media, or use the form below.</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Email: samuel.aarga@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://github.com/asapsonter" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/aarga-sonter" target="_blank">LinkedIn</a>
+                        <a href="https://twitter.com/asapsonter" target="_blank">Twitter</a>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
